@@ -1,3 +1,4 @@
+import Footer from './components/footer/Footer';
 import Topbar from './components/navbar/Topbar';
 import Home from './pages/home/Home';
 
@@ -6,6 +7,7 @@ function App() {
     <div>
       <Topbar/>
       <Home/>
+      <Footer/>
     </div>
   
   );

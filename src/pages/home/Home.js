@@ -4,10 +4,11 @@ import Homebg from "../../components/homebg/Homebg";
 import NewsCard from "../../components/NewsCard/NewsCard";
 import "./home.css";
 import { Fade } from 'react-reveal'
+import ReviewCard from "../../components/reviewCard/ReviewCard";
 
 const Home = () => {
   return (
-    <div>
+    <>
       {/* <Homebg/> */}
       <Container className="inner-container d-flex align-items-center">
         <Row className="">
@@ -37,9 +38,9 @@ const Home = () => {
           </Col>
         </Row>
       </Container>
-      <Container className="newsAndEvents ">
+      <Container className="newsAndEvents">
         <Fade left duration={3000}>
-        <h3 className="home-card-title text-primary">News & Events</h3>
+        <h3 className="home-subcard-title text-primary">News & Events</h3>
         </Fade>
         <Fade bottom duration={3000}>
         <Row>
@@ -49,7 +50,23 @@ const Home = () => {
         </Row>
         </Fade>
       </Container>
-    </div>
+      <Container className="reviews">
+      <Fade left duration={3000}>
+        <h3 className="home-subcard-title text-primary">Reviews</h3>
+        </Fade>
+        <Fade bottom duration={3000} opposite>
+          <Row>
+            <ReviewCard/>
+            <ReviewCard/>
+            <ReviewCard/>
+            <ReviewCard/>
+            <ReviewCard/>
+            <ReviewCard/>
+            <ReviewCard/>
+          </Row>
+          </Fade>
+      </Container>
+    </>
   );
 };
 
