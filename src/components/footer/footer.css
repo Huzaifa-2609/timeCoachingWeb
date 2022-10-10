@@ -13,7 +13,7 @@
     position: relative;
     color: #fff;
     padding: 7rem 0;
-    background-color: #141d2a; }
+    background-color: #0d2b56; }
     .footer-20192 .container {
       position: relative; }
     .footer-20192 h3 {
@@ -34,13 +34,13 @@
       position: relative; }
       .footer-20192 .social li a {
         position: relative;
-        width: 40px;
-        height: 40px;
+        width: 36px;
+        height: 36px;
         border-radius: 50%;
         display: inline-block;
         margin: 0;
         padding: 0;
-        background-color: #8186d5;
+        /* background-color: #8186d5; */
         color: #fff; }
         .footer-20192 .social li a > span {
           position: absolute;

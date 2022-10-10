@@ -39,22 +39,19 @@ const Home = () => {
         </Row>
       </Container>
       <Container className="newsAndEvents">
-        <Fade left duration={3000}>
-        <h3 className="home-subcard-title text-primary">News & Events</h3>
+        <Fade left duration={2000}>
+        <h3 className="home-subcard-title">News & Events</h3>
         </Fade>
-        <Fade bottom duration={3000}>
         <Row>
               <NewsCard/>
               <NewsCard/>
               <NewsCard/>
         </Row>
-        </Fade>
       </Container>
       <Container className="reviews">
-      <Fade left duration={3000}>
-        <h3 className="home-subcard-title text-primary">Reviews</h3>
+      <Fade left duration={2000}>
+        <h3 className="home-subcard-title">Students' Reviews</h3>
         </Fade>
-        <Fade bottom duration={3000} opposite>
           <Row>
             <ReviewCard/>
             <ReviewCard/>
@@ -62,9 +59,7 @@ const Home = () => {
             <ReviewCard/>
             <ReviewCard/>
             <ReviewCard/>
-            <ReviewCard/>
           </Row>
-          </Fade>
       </Container>
     </>
   );
