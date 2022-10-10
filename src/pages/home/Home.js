@@ -1,6 +1,5 @@
 import React from "react";
 import { Button, Card, Col, Container, Row } from "react-bootstrap";
-import Homebg from "../../components/homebg/Homebg";
 import NewsCard from "../../components/NewsCard/NewsCard";
 import "./home.css";
 import { Fade } from 'react-reveal'
@@ -23,8 +22,8 @@ const Home = () => {
               </Card.Body>
             </Card>
           </Col>
-          <Col md={6}>
-            <Card className="w-100" bg="transparent" border="0">
+          {/* <Col md={6}> */}
+            {/* <Card className="w-100" bg="transparent" border="0"> */}
               {/* <Card.Img src="/assets/home/timelogo.png" className="logo"/> */}
               {/* <Card.Body>
                 <Card.Title as={"h1"}>Card Title</Card.Title>
@@ -34,8 +33,8 @@ const Home = () => {
                 </Card.Text>
                 <Button variant="primary">Go somewhere</Button>
               </Card.Body> */}
-            </Card>
-          </Col>
+            {/* </Card> */}
+          {/* </Col> */}
         </Row>
       </Container>
       <Container className="newsAndEvents">
