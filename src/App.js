@@ -7,6 +7,7 @@ import Faculty from './pages/faculty/Faculty';
 import Gallery from './pages/gallery/Gallery';
 import Campuses from './pages/campus/Campuses';
 import Admissions from './pages/admission/Admissions';
+import Dept from './components/department/Dept';
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
       <Route exact path='/gallery' element={<Gallery/>}/>
       <Route exact path='/campuses' element={<Campuses/>}/>
       <Route exact path='/admissions' element={<Admissions/>}/>
+      <Route exact path='/faculty/:deptname' element={<Dept/>}/>
     </Routes>
       <Footer/>
       </Router>
