@@ -7,7 +7,7 @@ const NewsCard = () => {
   return (
     <Col md={4} className="mt-4">
       <Fade bottom duration={2000}>
-      <Card className='rounded-3 shadow m-auto' style={{ width: '18rem' }} >
+      <Card className='rounded-3 shadow m-auto' style={{ width: '81%' }} >
       <Card.Img variant="top" src={"/assets/home/timelogo.png"} />
       <Card.Body>
         <Card.Title>Card Title</Card.Title>

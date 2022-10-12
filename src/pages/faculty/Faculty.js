@@ -1,4 +1,4 @@
-import React, {  useState } from "react";
+import React, { useState } from "react";
 import { Card, Col, Container, Row } from "react-bootstrap";
 import { Fade } from "react-reveal";
 import { Link } from "react-router-dom";
@@ -6,19 +6,6 @@ import { faculty } from "../../SampleData/faculty";
 import "./faculty.css";
 
 const Faculty = () => {
-  // const [touch, setTouch] = useState(false);
-  // const hasTouch=()=> {
-  //   if ('ontouchstart' in document.documentElement
-  //          || navigator.maxTouchPoints > 0
-  //          || navigator.msMaxTouchPoints > 0){
-  //           setTouch(true);
-  //           console.log(touch)
-  //          };
-  // }
-  // useEffect(() => {
-  //   hasTouch();
-  // }, [touch]);
-
   const FacultyCard = ({ dept }) => {
     const [reveal, setReveal] = useState(false);
     const mouseOver = () => {
@@ -46,8 +33,8 @@ const Faculty = () => {
             <Card.Title className="faculty-cardtitle">
               Faculty of {dept.deptname}
             </Card.Title>
-            <div>
-            <Fade distance={"1rem"} duration={500} left when={reveal}>
+            <div >
+            <Fade distance={"1rem"} duration={500} left  when={reveal}>
               <Card.Text className="text-muted fw-bold fs-3 mt-4">
                 <span className="card-key"> HOD:</span> {dept.hod}
               </Card.Text>

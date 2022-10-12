@@ -6,7 +6,7 @@ const ReviewCard = () => {
   return (
     <Col md={4} className="mt-4">
       <Fade bottom duration={2000}>
-      <Card style={{ width: '18rem' }} className="shadow m-auto">
+      <Card style={{ width: '81%' }} className="shadow m-auto">
       <Card.Body>
         {/* ~<Card.Title>Car</Card.Title> */}
         <Card.Title className="mb-2 fs-4">~ Huzaifa</Card.Title>
