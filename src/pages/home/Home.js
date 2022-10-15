@@ -14,7 +14,7 @@ const Home = () => {
           <Col md={7}>
             <Card className="w-100" bg="transparent" border="0" >
               <Card.Body>
-                <Card.Title as={"h4"} className="home-card-title text-primary" >26 Years of Dedication</Card.Title>
+                <Card.Title as={"h4"} className="home-card-title" >26 Years of Dedication</Card.Title>
                 <Card.Text className="home-card-desc text-muted fw-bold" >
                 IoBM empowers students and faculty to create a revolution with limitless dedication
                 </Card.Text>

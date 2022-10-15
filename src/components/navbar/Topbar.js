@@ -1,33 +1,33 @@
 import React from "react";
 import { Container, Nav, Navbar } from "react-bootstrap";
 import { NavLink } from "react-router-dom";
-
+import "./navbar.css"
 const Topbar = () => {
   return (
     <div>
-      <Navbar bg="white" sticky={"top"} className="shadow" expand="lg">
-        <Container>
+      <Navbar bg="white" sticky={"top"} className="shadow " expand="lg">
+        <Container className="">
           <Navbar.Brand href="/">Time Collegiate Logo</Navbar.Brand>
           <Navbar.Toggle  aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
-            <Nav className="ms-auto">
-              <Nav.Link>
-                <NavLink className={"text-muted"} to="/">Home</NavLink>
+            <Nav className="ms-auto navColor">
+              <Nav.Link as={NavLink}  to="/" end>
+                Home
               </Nav.Link>
-              <Nav.Link>
-                <NavLink className={"text-muted"} to="/about">About us</NavLink>
+              <Nav.Link as={NavLink} to="/about">
+                About us
               </Nav.Link>
-              <Nav.Link>
-                <NavLink  className={"text-muted"} to="/faculty">Faculty</NavLink>
+              <Nav.Link as={NavLink} to="/faculty">
+                Faculty
               </Nav.Link>
-              <Nav.Link>
-                <NavLink  className={"text-muted"} to="/campuses">Campuses</NavLink>
+              <Nav.Link as={NavLink} to="/campuses">
+                Campuses
               </Nav.Link>
-              <Nav.Link>
-                <NavLink  className={"text-muted"} to="/admissions">Admissions</NavLink>
+              <Nav.Link as={NavLink} to="/admissions">
+                Admissions
               </Nav.Link>
-              <Nav.Link>
-                <NavLink className={"text-muted"} to="/gallery">Gallery</NavLink>
+              <Nav.Link as={NavLink} to="/gallery"> 
+                Gallery
               </Nav.Link>
               {/* <NavDropdown title="Dropdown" id="basic-nav-dropdown">
               <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
