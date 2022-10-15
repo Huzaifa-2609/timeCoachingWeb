@@ -4,10 +4,17 @@
     color: #033a73;
 }
 .dept-subtitle{
+    font-size: 18px;
+}
+.teacher-about{
     font-size: 15px;
 }
 .dept-subcard-title{
     font-size: 70px!important;
     font-weight: 700 !important;
     font-family: 'Roboto Slab', serif;
+}
+.teach-img{
+    height: 200px !important;
+    width: 200px !important;
 }
