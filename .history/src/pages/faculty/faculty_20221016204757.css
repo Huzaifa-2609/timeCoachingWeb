@@ -4,7 +4,7 @@
     font-family: 'Roboto Slab', serif;
 }
 .faculty{
-    min-height: 100vh !important;
+    height: fit-content;
 }
 .faculty-cardtitle{
     font-size: 35px!important;

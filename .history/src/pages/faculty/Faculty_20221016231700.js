@@ -28,8 +28,6 @@ const FacultyCard = ({ dept }) => {
           src={dept.imageUrl}
           className="opacity-25"
           alt="Card image"
-          height={"15%"}
-          // width={"18rem"}
           />
         <Card.ImgOverlay className="d-flex flex-column justify-content-evenly">
           <Card.Title className="faculty-cardtitle">

@@ -20,10 +20,10 @@ const RenderCard=({teacher})=>{
       <div className="col-md-8">
         <h2 className="dept-title ">{teacher.name}<span className="text-muted fs-3 d-inline ">{teacher.hod?"(HOD)":""}</span></h2>
         <Figure.Caption className="dept-subtitle ">
-          <h3 className="text-muted fs-3">Qualification:</h3>
-          <span className="fs-4">{teacher.qualification}</span>
-          {teacher.hod?<> <h3 className="text-muted fs-3">Teaching Since:</h3>
-          <span className="fs-4">{new Date(teacher.since).getFullYear()}</span></>:""}
+          <h3 className="text-muted fs-2">Qualification:</h3>
+          <span className="fs-3">{teacher.qualification}</span>
+          {teacher.hod?<> <h3 className="text-muted fs-2">Teaching Since:</h3>
+          <span className="fs-3">{teacher.qualification}</span></>:""}
         </Figure.Caption>
       </div>
     </Figure>

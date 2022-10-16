@@ -1,10 +1,9 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { Card, Col, Container, Row } from "react-bootstrap";
 import { Fade } from "react-reveal";
 import { Link } from "react-router-dom";
 import { faculty } from "../../SampleData/faculty";
 import "./faculty.css";
-import sanityClient from "../../client"
 
 const FacultyCard = ({ dept }) => {
   const [reveal, setReveal] = useState(false);
@@ -25,11 +24,9 @@ const FacultyCard = ({ dept }) => {
         border="0"
         >
         <Card.Img
-          src={dept.imageUrl}
+          src="/assets/home/urdu.png"
           className="opacity-25"
           alt="Card image"
-          height={"15%"}
-          // width={"18rem"}
           />
         <Card.ImgOverlay className="d-flex flex-column justify-content-evenly">
           <Card.Title className="faculty-cardtitle">
@@ -40,6 +37,10 @@ const FacultyCard = ({ dept }) => {
             <Card.Text className="text-muted fw-bold fs-5 mt-4">
               <span className="card-key"> HOD:</span> {dept.hod}
             </Card.Text>
+            <Card.Text className="fs-5 fw-bold text-muted">
+              <span className="card-key">Total Teachers:</span>{" "}
+              {dept.totalTeachers}
+            </Card.Text>
           </Fade>
           </div>
         </Card.ImgOverlay>
@@ -49,24 +50,14 @@ const FacultyCard = ({ dept }) => {
   );
 };
 const Faculty = () => {
-  const [dept, setDept] = useState([]);
-  useEffect(() => {
-    sanityClient
-        .fetch(
-            `*[_type=="depart"] {
-              deptname,
-              "imageUrl":bannerimage.asset->url,
-              "hod":hod->name,
-            }`
-        )
-        .then((data) => {setDept(data)})
-        .catch(console.error)
-}, []);
+
+
+
   return (
     <Container className="faculty my-5 p-2">
       <h3 className="faculty-subcard-title text-muted">Our Qualfied Faculty</h3>
       <Row>
-        {dept.map((a) => {
+        {faculty.map((a) => {
           return <FacultyCard dept={a} />;
         })}
       </Row>

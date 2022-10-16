@@ -4,7 +4,6 @@ import { Fade } from "react-reveal";
 import { Link } from "react-router-dom";
 import { faculty } from "../../SampleData/faculty";
 import "./faculty.css";
-import sanityClient from "../../client"
 
 const FacultyCard = ({ dept }) => {
   const [reveal, setReveal] = useState(false);
@@ -28,8 +27,6 @@ const FacultyCard = ({ dept }) => {
           src={dept.imageUrl}
           className="opacity-25"
           alt="Card image"
-          height={"15%"}
-          // width={"18rem"}
           />
         <Card.ImgOverlay className="d-flex flex-column justify-content-evenly">
           <Card.Title className="faculty-cardtitle">

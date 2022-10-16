@@ -18,12 +18,10 @@ const RenderCard=({teacher})=>{
         className="col-md-4 rounded-25"
       />
       <div className="col-md-8">
-        <h2 className="dept-title ">{teacher.name}<span className="text-muted fs-3 d-inline ">{teacher.hod?"(HOD)":""}</span></h2>
+        <h2 className="dept-title">{teacher.name}</h2>
         <Figure.Caption className="dept-subtitle ">
-          <h3 className="text-muted fs-3">Qualification:</h3>
-          <span className="fs-4">{teacher.qualification}</span>
-          {teacher.hod?<> <h3 className="text-muted fs-3">Teaching Since:</h3>
-          <span className="fs-4">{new Date(teacher.since).getFullYear()}</span></>:""}
+          <h3 className="text-muted">Qualification:</h3>
+          {teacher.qualification}
         </Figure.Caption>
       </div>
     </Figure>
@@ -52,16 +50,9 @@ const Dept = () => {
         .catch(console.error)
 }, []);
   return (
-    <Container className="department my-4 p-3">
+    <Container className="my-4 p-3">
     <h3 className="dept-subcard-title text-muted">Our {params.deptname} Faculty</h3>
 
-    {
-      teachers.filter((a)=> a.dept===params.deptname && a.hod).map((teacher)=>{
-        return(
-          <RenderCard teacher={teacher}/>
-        )
-      })
-    }
     {
       teachers.filter((a)=> a.dept===params.deptname && !a.hod).map((teacher)=>{
         return(
