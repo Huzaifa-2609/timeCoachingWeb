@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 // import Card from 'react-bootstrap/Card';
 // import Button from 'react-bootstrap/Button';
@@ -6,6 +6,7 @@ import { Container, Figure } from "react-bootstrap";
 import "./dept.css"
 import { Fade } from "react-reveal";
 import sanityClient from "../../client"
+import LoadContext from "../../Context/LoadContext";
 
 
 const RenderCard=({teacher})=>{
@@ -20,9 +21,9 @@ const RenderCard=({teacher})=>{
       <div className="col-md-8">
         <h2 className="dept-title ">{teacher.name}<span className="text-muted fs-3 d-inline ">{teacher.hod?"(HOD)":""}</span></h2>
         <Figure.Caption className="dept-subtitle ">
-          <h3 className="text-muted fs-3">Qualification:</h3>
+          <h3 className="text-dark fs-3">Qualification:</h3>
           <span className="fs-4">{teacher.qualification}</span>
-          {teacher.hod?<> <h3 className="text-muted fs-3">Teaching Since:</h3>
+          {teacher.hod?<> <h3 className="text-dark fs-3">Teaching Since:</h3>
           <span className="fs-4">{new Date(teacher.since).getFullYear()}</span></>:""}
         </Figure.Caption>
       </div>
@@ -36,7 +37,10 @@ const Dept = () => {
 
   const params = useParams();
   const [teachers, setTeachers] = useState([]);
+  const context = useContext(LoadContext);
+  const {updateProgress} = context
   useEffect(() => {
+    updateProgress(30)
     sanityClient
         .fetch(
             `*[_type=="teachers"] {
@@ -48,8 +52,9 @@ const Dept = () => {
               since,
             }`
         )
-        .then((data) => {setTeachers(data)})
+        .then((data) => {setTeachers(data); updateProgress(70); updateProgress(100)})
         .catch(console.error)
+        
 }, []);
   return (
     <Container className="department my-4 p-3">

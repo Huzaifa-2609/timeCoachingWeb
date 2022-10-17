@@ -1,10 +1,10 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { Card, Col, Container, Row } from "react-bootstrap";
 import { Fade } from "react-reveal";
 import { Link } from "react-router-dom";
-import { faculty } from "../../SampleData/faculty";
 import "./faculty.css";
 import sanityClient from "../../client"
+import LoadContext from "../../Context/LoadContext";
 
 const FacultyCard = ({ dept }) => {
   const [reveal, setReveal] = useState(false);
@@ -15,7 +15,7 @@ const FacultyCard = ({ dept }) => {
     setReveal(false);
   };
   return (
-    <Col md={4} className="my-5 p-2">
+    <Col md={4} className="my-2 p-2">
       <Link to={`/faculty/${dept.deptname}`}>
       <Card
         role={"button"}
@@ -23,13 +23,12 @@ const FacultyCard = ({ dept }) => {
         onMouseLeave={mouseLeave}
         className="shadow-lg "
         border="0"
+        style={{minHeight:"260px" }}
         >
         <Card.Img
           src={dept.imageUrl}
           className="opacity-25"
           alt="Card image"
-          height={"15%"}
-          // width={"18rem"}
           />
         <Card.ImgOverlay className="d-flex flex-column justify-content-evenly">
           <Card.Title className="faculty-cardtitle">
@@ -37,8 +36,8 @@ const FacultyCard = ({ dept }) => {
           </Card.Title>
           <div >
           <Fade distance={"1rem"} duration={500} left  when={reveal}>
-            <Card.Text className="text-muted fw-bold fs-5 mt-4">
-              <span className="card-key"> HOD:</span> {dept.hod}
+            <Card.Text className="text-muted h-50 mt-4">
+              <span className="card-key fs-5 fw-bold"> HOD:</span><span className="fs-5 fw-bold"> {dept.hod}</span>
             </Card.Text>
           </Fade>
           </div>
@@ -49,8 +48,12 @@ const FacultyCard = ({ dept }) => {
   );
 };
 const Faculty = () => {
+
+  const context = useContext(LoadContext)
+  const {updateProgress}= context;
   const [dept, setDept] = useState([]);
   useEffect(() => {
+    updateProgress(50)
     sanityClient
         .fetch(
             `*[_type=="depart"] {
@@ -59,14 +62,15 @@ const Faculty = () => {
               "hod":hod->name,
             }`
         )
-        .then((data) => {setDept(data)})
+        .then((data) => {setDept(data) ; updateProgress(70); updateProgress(100);})
         .catch(console.error)
+        
 }, []);
   return (
-    <Container className="faculty my-5 p-2">
-      <h3 className="faculty-subcard-title text-muted">Our Qualfied Faculty</h3>
+    <Container className="faculty my-5 px-3">
+      <h3 className="faculty-subcard-title text-muted">Our Qualified Faculty</h3>
       <Row>
-        {dept.map((a) => {
+        {dept.length!==0 && dept.map((a) => {
           return <FacultyCard dept={a} />;
         })}
       </Row>

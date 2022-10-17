@@ -1,34 +1,30 @@
 import React from 'react'
-import { Container, Figure } from 'react-bootstrap'
+import { Container} from 'react-bootstrap'
 import { Fade } from 'react-reveal'
 import { campus } from '../../SampleData/campussample'
-import {ImLocation} from "react-icons/im"
 import "./campus.css"
 
 
 const RenderCard=({item})=>{
   return(
+    <Container className='my-5' width={"85%"}>
+    <Fade left duration={2000} distance={"2rem"}>
+        <h3 className="camp-subcard-title mb-5">{item.name}</h3>
+   </Fade>
   <Fade bottom={true} duration={2000}>
-  <Figure className="row rounded mx-auto my-5" style={{width:"85%"}}>
-    <Figure.Image
-      alt="171x180"
-      src={item.image}
-      className="col-md-4 rounded-25"
-    />
     <div className="col-md-8 mt-3">
-      <h2 className="camp-title"><span className="card-key">Campus# </span><span className='text-muted'>{item.name}</span></h2>
-      <Figure.Caption className="camp-subtitle">
-      <span className="card-key"><ImLocation/> </span> {item.address}
-      </Figure.Caption>
+      <div><span className="camp-card-key fs-3 fw-bold">Address</span>: <span className="card-value text-muted fs-4 ">{item.address}</span></div>
+    <span className="camp-card-key fs-3 fw-bold">Contact</span>: <span className="card-value text-muted fs-4 ">{item.contact}</span>
     </div>
-  </Figure>
   </Fade>
+        </Container>
   )
 }
 
 const Campuses = () => {
   return (
-    <Container>
+    <Container className='my-5'>
+      <h1 className='about-card-title text-muted my-4'>Our Network</h1>  
       {campus.map((a)=>{
        return (<RenderCard key={campus.indexOf(a)} item={a}/>)
       })}

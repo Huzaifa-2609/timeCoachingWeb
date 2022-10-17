@@ -8,11 +8,21 @@ import Gallery from './pages/gallery/Gallery';
 import Campuses from './pages/campus/Campuses';
 import Admissions from './pages/admission/Admissions';
 import Dept from './components/department/Dept';
+import LoadingBar from 'react-top-loading-bar';
+import { useContext } from 'react';
+import LoadContext from './Context/LoadContext';
 
 function App() {
+  const context = useContext(LoadContext);
+  const {progress, setProgress} = context
   return (
     <div>
       <Topbar/>
+      <LoadingBar
+        color='blue'
+        progress={progress}
+        onLoaderFinished={() => setProgress(0)}
+        />
     <Routes>
       <Route exact path='/' element={<Home/>}/>
       <Route exact path='/about' element={<About/>}/>

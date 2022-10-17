@@ -4,8 +4,30 @@ import NewsCard from "../../components/NewsCard/NewsCard";
 import "./home.css";
 import { Fade } from 'react-reveal'
 import ReviewCard from "../../components/reviewCard/ReviewCard";
+import Carousel from "react-multi-carousel";
+import "react-multi-carousel/lib/styles.css";
+
 
 const Home = () => {
+  const responsive = {
+    superLargeDesktop: {
+      // the naming can be any, depends on you.
+      breakpoint: { max: 4000, min: 3000 },
+      items: 3
+    },
+    desktop: {
+      breakpoint: { max: 3000, min: 1024 },
+      items: 3
+    },
+    tablet: {
+      breakpoint: { max: 1024, min: 464 },
+      items: 2
+    },
+    mobile: {
+      breakpoint: { max: 464, min: 0 },
+      items: 1
+    }
+  };
   return (
     <>
       {/* <Homebg/> */}
@@ -22,19 +44,6 @@ const Home = () => {
               </Card.Body>
             </Card>
           </Col>
-          {/* <Col md={6}> */}
-            {/* <Card className="w-100" bg="transparent" border="0"> */}
-              {/* <Card.Img src="/assets/home/timelogo.png" className="logo"/> */}
-              {/* <Card.Body>
-                <Card.Title as={"h1"}>Card Title</Card.Title>
-                <Card.Text>
-                  Some quick example text to build on the card title and make up
-                  the bulk of the card's content.
-                </Card.Text>
-                <Button variant="primary">Go somewhere</Button>
-              </Card.Body> */}
-            {/* </Card> */}
-          {/* </Col> */}
         </Row>
       </Container>
       <Container className="newsAndEvents">
@@ -59,6 +68,115 @@ const Home = () => {
             <ReviewCard/>
             <ReviewCard/>
           </Row>
+      </Container>
+      <Container>
+      <Fade left duration={2000}>
+        <h3 className="home-subcard-title">Courses We Offer?</h3>
+        </Fade>
+        <Fade bottom duration={2000}>
+        <Carousel responsive={responsive} autoPlay autoPlaySpeed={5000} className="mx-auto">
+        <Card className='rounded-3 shadow m-auto' style={{ width: '81%' }} >
+      <Card.Img variant="top" src={"/assets/home/timelogo.png"} />
+      <Card.Body>
+        <Card.Title>Card Title</Card.Title>
+        <Card.Text>
+          Some quick example text to build on the card title and make up the
+          bulk of the card's content.
+        </Card.Text>
+      </Card.Body>
+        </Card> 
+        <Card className='rounded-3 shadow m-auto' style={{ width: '81%' }} >
+      <Card.Img variant="top" src={"/assets/home/timelogo.png"} />
+      <Card.Body>
+        <Card.Title>Card Title</Card.Title>
+        <Card.Text>
+          Some quick example text to build on the card title and make up the
+          bulk of the card's content.
+        </Card.Text>
+      </Card.Body>
+        </Card> 
+        <Card className='rounded-3 shadow m-auto' style={{ width: '81%' }} >
+      <Card.Img variant="top" src={"/assets/home/timelogo.png"} />
+      <Card.Body>
+        <Card.Title>Card Title</Card.Title>
+        <Card.Text>
+          Some quick example text to build on the card title and make up the
+          bulk of the card's content.
+        </Card.Text>
+      </Card.Body>
+        </Card> 
+        <Card className='rounded-3 shadow m-auto' style={{ width: '81%' }} >
+      <Card.Img variant="top" src={"/assets/home/timelogo.png"} />
+      <Card.Body>
+        <Card.Title>Card Title</Card.Title>
+        <Card.Text>
+          Some quick example text to build on the card title and make up the
+          bulk of the card's content.
+        </Card.Text>
+      </Card.Body>
+        </Card> 
+        <Card className='rounded-3 shadow m-auto' style={{ width: '81%' }} >
+      <Card.Img variant="top" src={"/assets/home/timelogo.png"} />
+      <Card.Body>
+        <Card.Title>Card Title</Card.Title>
+        <Card.Text>
+          Some quick example text to build on the card title and make up the
+          bulk of the card's content.
+        </Card.Text>
+      </Card.Body>
+        </Card> 
+        <Card className='rounded-3 shadow m-auto' style={{ width: '81%' }} >
+      <Card.Img variant="top" src={"/assets/home/timelogo.png"} />
+      <Card.Body>
+        <Card.Title>Card Title</Card.Title>
+        <Card.Text>
+          Some quick example text to build on the card title and make up the
+          bulk of the card's content.
+        </Card.Text>
+      </Card.Body>
+        </Card> 
+        <Card className='rounded-3 shadow m-auto' style={{ width: '81%' }} >
+      <Card.Img variant="top" src={"/assets/home/timelogo.png"} />
+      <Card.Body>
+        <Card.Title>Card Title</Card.Title>
+        <Card.Text>
+          Some quick example text to build on the card title and make up the
+          bulk of the card's content.
+        </Card.Text>
+      </Card.Body>
+        </Card> 
+        <Card className='rounded-3 shadow m-auto' style={{ width: '81%' }} >
+      <Card.Img variant="top" src={"/assets/home/timelogo.png"} />
+      <Card.Body>
+        <Card.Title>Card Title</Card.Title>
+        <Card.Text>
+          Some quick example text to build on the card title and make up the
+          bulk of the card's content.
+        </Card.Text>
+      </Card.Body>
+        </Card> 
+        <Card className='rounded-3 shadow m-auto' style={{ width: '81%' }} >
+      <Card.Img variant="top" src={"/assets/home/timelogo.png"} />
+      <Card.Body>
+        <Card.Title>Card Title</Card.Title>
+        <Card.Text>
+          Some quick example text to build on the card title and make up the
+          bulk of the card's content.
+        </Card.Text>
+      </Card.Body>
+        </Card> 
+        <Card className='rounded-3 shadow m-auto' style={{ width: '81%' }} >
+      <Card.Img variant="top" src={"/assets/home/timelogo.png"} />
+      <Card.Body>
+        <Card.Title>Card Title</Card.Title>
+        <Card.Text>
+          Some quick example text to build on the card title and make up the
+          bulk of the card's content.
+        </Card.Text>
+      </Card.Body>
+        </Card>  
+    </Carousel>;
+    </Fade>
       </Container>
     </>
   );

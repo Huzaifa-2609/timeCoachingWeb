@@ -6,3 +6,13 @@
     font-weight: 700 !important;
     color: #033a73;
 }
+.camp-subcard-title {
+    font-size: 50px!important;
+    font-weight: 700 !important;
+    color: #033a73;
+    font-family: 'Roboto Slab', serif;
+}
+.camp-card-key{
+    color: #033a73;
+    font-family: 'Roboto Slab', serif;
+}
