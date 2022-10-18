@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { Container, Nav, Navbar, NavDropdown } from "react-bootstrap";
-import { Fade } from "react-reveal";
 import { NavLink, Link } from "react-router-dom";
 import "./navbar.css"
 const Topbar = () => {
@@ -14,11 +13,11 @@ const hideDropdown = e => {
   return (
     <div>
       <Navbar bg="white" sticky={"top"} className="shadow" expand="lg">
-        <Container className="">
+        <Container className="whole-nav">
           <Navbar.Brand href="/">Time Collegiate Logo</Navbar.Brand>
           <Navbar.Toggle  aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
-            <Nav className="ms-auto navColor">
+            <Nav className="ms-auto ">
               <Nav.Link as={NavLink}  to="/" end>
                 Home
               </Nav.Link>
@@ -26,7 +25,7 @@ const hideDropdown = e => {
                 About us
               </Nav.Link>
               <NavDropdown show={show} onMouseEnter={showDropdown} onMouseLeave={hideDropdown} title="Faculty" id="basic-nav-dropdown">
-              <Fade top>
+              <div className="time-drop">
               <NavDropdown.Item as={Link} to="/faculty">Faculty Home</NavDropdown.Item>
               <NavDropdown.Divider/>
               <NavDropdown.Item as={Link} to="/faculty/Physics">
@@ -44,7 +43,7 @@ const hideDropdown = e => {
               <NavDropdown.Item as={Link} to="/faculty/Biology">
                 Biology
               </NavDropdown.Item>
-              </Fade>
+              </div>
             </NavDropdown>
               <Nav.Link as={NavLink} to="/campuses">
                 Campuses
@@ -55,7 +54,6 @@ const hideDropdown = e => {
               <Nav.Link as={NavLink} to="/gallery"> 
                 Gallery
               </Nav.Link>
-              
             </Nav>
           </Navbar.Collapse>
         </Container>

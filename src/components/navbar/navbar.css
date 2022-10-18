@@ -1,3 +1,15 @@
-.navColor{
-    color: #0d2b56!important;
+
+.dropdown .dropdown-menu {
+     
+        transition: all 0.5s;
+        overflow: hidden;
+        transform-origin: top center;
+        transform: scale(1,0);
+        display: block;
+    }
+.dropdown:hover .dropdown-menu{
+    transform: scale(1);
+}
+.whole-nav{
+    font-family: 'PT Sans', sans-serif;
 }

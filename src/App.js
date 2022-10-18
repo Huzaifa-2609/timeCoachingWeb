@@ -21,6 +21,7 @@ function App() {
       <LoadingBar
         color='blue'
         progress={progress}
+        height={3}
         onLoaderFinished={() => setProgress(0)}
         />
     <Routes>
