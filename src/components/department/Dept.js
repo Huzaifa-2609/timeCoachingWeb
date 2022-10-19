@@ -43,7 +43,8 @@ const Dept = () => {
     updateProgress(30)
     sanityClient
         .fetch(
-            `*[_type=="teachers"] {
+            `*[_type=="teachers"]| order(_createdAt asc) {
+              _id,
               name,
               "imageUrl":image.asset->url,
               hod,
@@ -63,7 +64,7 @@ const Dept = () => {
     {
       teachers.filter((a)=> a.dept===params.deptname && a.hod).map((teacher)=>{
         return(
-          <RenderCard teacher={teacher}/>
+          <RenderCard key={teacher._id} teacher={teacher}/>
         )
       })
     }

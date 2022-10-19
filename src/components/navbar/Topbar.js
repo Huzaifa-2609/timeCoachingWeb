@@ -26,8 +26,6 @@ const hideDropdown = e => {
               </Nav.Link>
               <NavDropdown show={show} onMouseEnter={showDropdown} onMouseLeave={hideDropdown} title="Faculty" id="basic-nav-dropdown">
               <div className="time-drop">
-              <NavDropdown.Item as={Link} to="/faculty">Faculty Home</NavDropdown.Item>
-              <NavDropdown.Divider/>
               <NavDropdown.Item as={Link} to="/faculty/Physics">
                 Physics
               </NavDropdown.Item>
@@ -43,6 +41,8 @@ const hideDropdown = e => {
               <NavDropdown.Item as={Link} to="/faculty/Biology">
                 Biology
               </NavDropdown.Item>
+              <NavDropdown.Divider/>
+              <NavDropdown.Item as={Link} to="/faculty">Show more</NavDropdown.Item>
               </div>
             </NavDropdown>
               <Nav.Link as={NavLink} to="/campuses">

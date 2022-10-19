@@ -56,7 +56,8 @@ const Faculty = () => {
     updateProgress(50)
     sanityClient
         .fetch(
-            `*[_type=="depart"] {
+            `*[_type=="depart"]| order(_createdAt asc) {
+              _id,
               deptname,
               "imageUrl":bannerimage.asset->url,
               "hod":hod->name,
@@ -71,7 +72,8 @@ const Faculty = () => {
       <h3 className="faculty-subcard-title text-muted">Our Qualified Faculty</h3>
       <Row>
         {dept.length!==0 && dept.map((a) => {
-          return <FacultyCard dept={a} />;
+
+          return <FacultyCard key={a._id} dept={a} />;
         })}
       </Row>
     </Container>

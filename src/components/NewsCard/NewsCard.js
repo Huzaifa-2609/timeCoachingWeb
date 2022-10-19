@@ -1,21 +1,21 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Card, Col } from 'react-bootstrap'
 import { Fade } from 'react-reveal'
 
 
-const NewsCard = () => {
+const NewsCard = (props) => {
+  const [showMore, setShowMore] = useState(false);
   return (
     <Col md={4} className="mt-4">
       <Fade bottom duration={2000}>
       <Card className='rounded-3 shadow m-auto' style={{ width: '81%' }} >
-      <Card.Img variant="top" src={"/assets/home/timelogo.png"} />
+      <Card.Img variant="top" src={props.new.imageUrl} />
       <Card.Body>
-        <Card.Title>Card Title</Card.Title>
+        <Card.Title>{props.new.title}</Card.Title>
         <Card.Text>
-          Some quick example text to build on the card title and make up the
-          bulk of the card's content.
+        {showMore ? props.new.desc : `${props.new.desc.substring(0, 62)}`}
+        <div className='text-primary' onClick={() => setShowMore(!showMore)} role={"button"}>{showMore ? "Show less" : "Show more"}</div>
         </Card.Text>
-        {/* <Button variant="primary">Go somewhere</Button> */}
       </Card.Body>
     </Card>
     </Fade>
