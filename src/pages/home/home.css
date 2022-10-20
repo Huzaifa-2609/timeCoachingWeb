@@ -1,4 +1,4 @@
-.inner-container::before{
+/* .inner-container::before{
     content: "";
     background:url('../../../public/assets/home/1.jpg' ) no-repeat center center/cover;
     position: absolute;
@@ -8,13 +8,14 @@
     opacity: 0.1;
     top: 0px;
     left: 0px;
-}
+} */
 .inner-container{
     height: 100vh;
+    padding-left:  1.5vw !important;
 
 }
 .home-card-title{
-    font-size: 60px!important;
+    font-size: 75px!important;
     font-weight: 700 !important;
     font-family: 'Roboto Slab', serif;
     color: #033a73;

@@ -10,6 +10,7 @@ import sanityClient from "../../client";
 import { Link } from "react-router-dom";
 import { courses } from "../../SampleData/courses";
 import { review } from "../../SampleData/review";
+import Homebg from "../../components/homebg/Homebg";
 
 const Home = () => {
   const [news, setNews] = useState([]);
@@ -48,7 +49,8 @@ const Home = () => {
   };
   return (
     <>
-      <Container className="inner-container d-flex align-items-center">
+    <Homebg/>
+      <Container className="inner-container position-absolute top-0 mt-5 d-flex align-items-center">
         <Row className="">
           <Col md={7}>
             <Card className="w-100" bg="transparent" border="0">
@@ -56,7 +58,7 @@ const Home = () => {
                 <Card.Title as={"h4"} className="home-card-title">
                   24 Years of Dedication
                 </Card.Title>
-                <Card.Text className="home-card-desc text-muted fw-bold">
+                <Card.Text className="home-card-desc fw-bold">
                   Transforming our youth into educated leaders by providing them
                   quality education and character building.
                 </Card.Text>
@@ -70,7 +72,7 @@ const Home = () => {
           </Col>
         </Row>
       </Container>
-      <Container className="newsAndEvents">
+      <Container className="newsAndEvents mt-5">
         <Fade left duration={2000}>
           <h3 className="home-subcard-title">News & Events</h3>
         </Fade>
@@ -99,7 +101,7 @@ const Home = () => {
       </Container>
       <Container>
         <Fade left duration={2000}>
-          <h3 className="home-subcard-title mb-2">Courses We Offer?</h3>
+          <h3 className="home-subcard-title">Courses We Offer?</h3>
         </Fade>
         <Fade bottom duration={2000}>
           <Carousel
@@ -112,7 +114,7 @@ const Home = () => {
               return (
                 <Card
                   key={courses.indexOf(course)}
-                  className=" shadow m-auto my-5"
+                  className=" shadow m-auto mt-2"
                   style={{ width: "81%", borderRadius: "14px" }}
                 >
                   <Card.Img

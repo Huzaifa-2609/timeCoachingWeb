@@ -14,7 +14,13 @@ const hideDropdown = e => {
     <div>
       <Navbar bg="white" sticky={"top"} className="shadow" expand="lg">
         <Container className="whole-nav">
-          <Navbar.Brand href="/">Time Collegiate Logo</Navbar.Brand>
+          <Navbar.Brand href="/"><img
+              src="/assets/home/logo.png"
+              width="140"
+              height="45"
+              className="d-inline-block align-top"
+              alt="Time Collegiate logo"
+            /></Navbar.Brand>
           <Navbar.Toggle  aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="ms-auto ">

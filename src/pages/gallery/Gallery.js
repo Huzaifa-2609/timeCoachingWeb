@@ -18,11 +18,11 @@ const Gallery = () => {
     },
     tablet: {
       breakpoint: { max: 1024, min: 464 },
-      items: 2,
+      items: 3,
     },
     mobile: {
       breakpoint: { max: 464, min: 0 },
-      items: 2,
+      items: 3,
     },
   };
         const pics1= photos.filter((a)=>photos.indexOf(a)<36);
@@ -37,7 +37,7 @@ const Gallery = () => {
             className="mx-auto"
           >
           {pics1.map((a)=>{
-            return <Card className='mx-3'>
+            return <Card className='mx-1'>
                   <Card.Img src={a.src} alt="" />
               </Card>
           })}

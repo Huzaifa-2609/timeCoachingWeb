@@ -1,6 +1,6 @@
 export const photos2 = [
     { src: "/assets/gallery/annual/1.jpg", width: 800, height: 600 },
-    { src: "/assets/gallery/annual/2.jpg", width: 600, height: 600 },
+    { src: "/assets/gallery/annual/2.jpg", width: 1000, height: 600 },
     { src: "/assets/gallery/annual/3.jpg", width: 600, height: 600 },
     { src: "/assets/gallery/annual/4.jpg", width: 600, height: 600 },
     { src: "/assets/gallery/annual/5.jpg", width: 800, height: 600 },

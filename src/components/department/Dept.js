@@ -1,7 +1,5 @@
 import React, { useContext, useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-// import Card from 'react-bootstrap/Card';
-// import Button from 'react-bootstrap/Button';
 import { Container, Figure } from "react-bootstrap";
 import "./dept.css"
 import { Fade } from "react-reveal";
@@ -12,14 +10,14 @@ import LoadContext from "../../Context/LoadContext";
 const RenderCard=({teacher})=>{
   return(
     <Fade bottom={true} duration={2000}>
-    <Figure className="row rounded mx-auto my-5" style={{width:"85%", }}>
+    <Figure className="row rounded mx-auto shadow my-5 border-top-0 p-4" style={{width:"85%", }}>
       <Figure.Image
         alt="171x180"
         src={teacher.imageUrl||"/assets/home/def1.png" }
         className="col-md-4 rounded-25"
       />
-      <div className="col-md-8">
-        <h2 className="dept-title ">{teacher.name}<span className="text-muted fs-3 d-inline ">{teacher.hod?"(HOD)":""}</span></h2>
+      <div className="col-md-8 mt-2">
+        <h2 className="dept-title ">{teacher.name}<span className="text-muted fs-3 ms-2 d-inline ">{teacher.hod?"(HOD)":""}</span></h2>
         <Figure.Caption className="dept-subtitle ">
           <h3 className="text-dark fs-3">Qualification:</h3>
           <span className="fs-4">{teacher.qualification}</span>
